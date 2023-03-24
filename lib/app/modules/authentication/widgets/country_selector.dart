@@ -24,6 +24,7 @@ class CountrySelector extends HookConsumerWidget {
         callBack: (v) {
           code.value = v.countryCode;
           countryFlag.value = v.svgPath;
+          countryCode(code.value);
         },
       );
     }
@@ -46,7 +47,6 @@ class CountrySelector extends HookConsumerWidget {
             child: InkWell(
               onTap: () {
                 selectCountry();
-                countryCode(code.value);
               },
               child: Row(
                 children: [

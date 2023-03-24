@@ -22,6 +22,7 @@ class InputMobilePage extends HookConsumerWidget {
     setStatusBarColor(color: BarColor.black);
 
     final _phone = useTextEditingController();
+    final code = useState('');
 
     return GestureDetector(
       onTap: FocusScope.of(context).unfocus,
@@ -43,7 +44,9 @@ class InputMobilePage extends HookConsumerWidget {
                   keyboardType: TextInputType.phone,
                   label: 'Phone Number',
                   prefixIcon: CountrySelector(
-                    countryCode: (v) {},
+                    countryCode: (v) {
+                      code.value = v;
+                    },
                   ),
                   controller: _phone,
                 ),
@@ -95,6 +98,7 @@ class InputMobilePage extends HookConsumerWidget {
                     final page = VerifyAccountPage(
                       onOtpChanged: (otp) {},
                       onVerify: () {},
+                      phone: code.value + _phone.text,
                     );
                     pushTo(context, page);
                   },

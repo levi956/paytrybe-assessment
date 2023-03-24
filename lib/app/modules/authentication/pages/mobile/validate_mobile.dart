@@ -14,9 +14,11 @@ class VerifyAccountPage extends StatelessWidget {
     super.key,
     required this.onOtpChanged,
     required this.onVerify,
+    required this.phone,
   });
   final Function(String) onOtpChanged;
   final VoidCallback onVerify;
+  final String phone;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class VerifyAccountPage extends StatelessWidget {
                 weight: FontWeight.w500,
               ),
               const YBox(50),
-              const BaseText(text: 'Enter the 6 digit otp code sent to'),
+              BaseText(text: 'Enter the 6 digit otp code sent to $phone'),
               const YBox(10),
               CustomPinCodeField(
                 length: 6,
