@@ -2,6 +2,10 @@
 
 
 ## Installation
+1. Find attached an apk file in the "apk" folder directory of the project.
+
+or 
+
 1. Make sure you have [Flutter](https://flutter.dev/docs/get-started/install) and its dependencies installed on your device.
 2. Clone the repository: `git clone https://github.com/yourusername/my-app.git`
 3. Go to the project directory: `cd my-app`
