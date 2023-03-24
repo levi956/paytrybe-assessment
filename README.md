@@ -1,16 +1,29 @@
-# paytrybe_assessment
+# Paytrybe Mobile Engineer Assessment
 
-A new Flutter project.
+## Feature Interface
+- [x] Get Started 
+- [x] Sign Up
+- [x] Phone Verification
+- [x] Home Dashboard
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+| Get Started Screen | Select Country Screen | 
+|    :---:     |     :---:      |  
+| <img src="graphics/get_started.png" width="500">   | <img src="graphics/select_country.png" width="500">   |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| Verification Screen | Register Screen | 
+|    :---:     |     :---:      |  
+| <img src="graphics/verify_phone.png" width="500">   | <img src="graphics/sign_up.png" width="500">   |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| HomeScreen | 
+|    :---:     |   
+| <img src="graphics/homepage.png" width="500">   | 
+
+## Running Tests 
+
+To run all unit tests use the following command:
+
+```flutter test```
+
