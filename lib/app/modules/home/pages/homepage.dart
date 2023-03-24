@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:paytrybe_assessment/app/modules/home/widgets/home_actions.dart';
 import 'package:paytrybe_assessment/app/modules/home/widgets/quick_actions_card.dart';
+import 'package:paytrybe_assessment/app/modules/home/widgets/select_account_card.dart';
 import 'package:paytrybe_assessment/app/shared/widgets/buttons/custom_button.dart';
 import 'package:paytrybe_assessment/core/constants/layout.dart';
 import 'package:paytrybe_assessment/core/theme/app_theme.dart';
@@ -80,7 +81,9 @@ class HomePage extends HookConsumerWidget {
                         ),
                       ),
                     ),
-                    const YBox(70),
+                    const YBox(30),
+                    const SelectAccountType(),
+                    const YBox(20),
                     Row(
                       children: [
                         Expanded(
@@ -91,7 +94,7 @@ class HomePage extends HookConsumerWidget {
                             onPressed: () {},
                           ),
                         ),
-                        XBox(20),
+                        const XBox(20),
                         Expanded(
                           child: CustomButton(
                             text: 'Send Money',

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:paytrybe_assessment/app/modules/authentication/pages/mobile/input_mobile.dart';
-import 'package:paytrybe_assessment/app/modules/authentication/pages/sign_up/sign_up.dart';
-import 'package:paytrybe_assessment/app/shared/pages/dashboard.dart';
+import 'package:paytrybe_assessment/core/setups/setups.dart';
 import 'package:paytrybe_assessment/core/theme/app_theme.dart';
 
-void main() {
+void main() async {
+  await Setups.init();
   runApp(const ProviderScope(
     child: PaytrybeApp(),
   ));
@@ -20,7 +20,7 @@ class PaytrybeApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Paytrybe',
       theme: AppTheme.lightThemeData,
-      home: const DashboardPage(),
+      home: const InputMobilePage(),
     );
   }
 }

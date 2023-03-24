@@ -236,14 +236,14 @@ class CustomTextField extends StatelessWidget {
             ),
           ),
         ),
-        (inputValid ?? false)
-            ? const SizedBox.shrink()
-            : BaseText(
-                text: makeValid ?? '',
-                size: 12,
-                color: Colors.red,
-                weight: FontWeight.w600,
-              )
+        // (inputValid ?? false)
+        //     ? const SizedBox.shrink()
+        //     : BaseText(
+        //         text: makeValid ?? '',
+        //         size: 12,
+        //         color: Colors.red,
+        //         weight: FontWeight.w600,
+        //       )
       ],
     );
   }

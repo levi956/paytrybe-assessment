@@ -19,7 +19,7 @@ class DashboardPage extends StatefulHookConsumerWidget {
 class _DashboardPageState extends ConsumerState<DashboardPage> {
   @override
   Widget build(BuildContext context) {
-    setStatusBarColor(color: BarColor.black);
+    setStatusBarColor(color: BarColor.white);
     List<Widget> screens = const [
       HomePage(),
       SizedBox(),

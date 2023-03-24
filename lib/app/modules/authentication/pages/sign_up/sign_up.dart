@@ -7,11 +7,15 @@ import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:paytrybe_assessment/app/modules/authentication/widgets/country_dropdown.dart';
 import 'package:paytrybe_assessment/app/shared/helpers/eye_visibility.dart';
+import 'package:paytrybe_assessment/app/shared/pages/dashboard.dart';
 import 'package:paytrybe_assessment/app/shared/widgets/buttons/custom_button.dart';
 import 'package:paytrybe_assessment/app/shared/widgets/input/custom_textfield.dart';
 import 'package:paytrybe_assessment/app/shared/widgets/text/base_text.dart';
 import 'package:paytrybe_assessment/core/constants/layout.dart';
 import 'package:paytrybe_assessment/core/theme/bar_color.dart';
+
+import '../../../../../core/config/navigation.dart';
+import '../../../../shared/widgets/appbar/custom_appbar.dart';
 
 class SignUpPage extends HookConsumerWidget {
   const SignUpPage({super.key});
@@ -29,7 +33,7 @@ class SignUpPage extends HookConsumerWidget {
       onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
         appBar: const CustomAppBar(
-          title: 'Create account',
+          title: 'Create Account',
         ),
         body: Padding(
           padding: appPadding,
@@ -67,7 +71,7 @@ class SignUpPage extends HookConsumerWidget {
                 CustomTextField(
                   label: '',
                   hintText: 'Password',
-                  isHidden: showPassword.value,
+                  isHidden: !showPassword.value,
                   onChanged: (v) {
                     password.value = v;
                   },
@@ -117,7 +121,10 @@ class SignUpPage extends HookConsumerWidget {
                 const Spacer(),
                 CustomButton(
                   text: 'Continue',
-                  onPressed: () {},
+                  onPressed: () {
+                    const page = DashboardPage();
+                    pushTo(context, page);
+                  },
                 ),
                 const YBox(30),
               ],
