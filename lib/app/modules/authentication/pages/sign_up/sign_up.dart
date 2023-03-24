@@ -3,9 +3,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:paytrybe_assessment/app/modules/authentication/widgets/country_dropdown.dart';
 import 'package:paytrybe_assessment/app/shared/helpers/eye_visibility.dart';
 import 'package:paytrybe_assessment/app/shared/pages/dashboard.dart';
 import 'package:paytrybe_assessment/app/shared/widgets/buttons/custom_button.dart';
@@ -57,6 +55,7 @@ class SignUpPage extends HookConsumerWidget {
                 CustomTextField(
                   label: '',
                   hintText: 'First & last name',
+                  keyboardType: TextInputType.name,
                   onChanged: (v) {
                     name.value = v;
                   },
@@ -64,6 +63,7 @@ class SignUpPage extends HookConsumerWidget {
                 CustomTextField(
                   label: '',
                   hintText: 'Email Address',
+                  keyboardType: TextInputType.emailAddress,
                   onChanged: (v) {
                     email.value = v;
                   },
@@ -71,6 +71,7 @@ class SignUpPage extends HookConsumerWidget {
                 CustomTextField(
                   label: '',
                   hintText: 'Password',
+                  keyboardType: TextInputType.visiblePassword,
                   isHidden: !showPassword.value,
                   onChanged: (v) {
                     password.value = v;
@@ -131,73 +132,6 @@ class SignUpPage extends HookConsumerWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CountrySelector extends HookConsumerWidget {
-  final ValueChanged<String> countryCode;
-  const CountrySelector({
-    super.key,
-    required this.countryCode,
-  });
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final countryFlag = useState('assets/svg/canada.svg');
-    final code = useState('+1');
-
-    Future<void> selectCountry() async {
-      await countryBottomSheet(
-        context,
-        callBack: (v) {
-          code.value = v.countryCode;
-          countryFlag.value = v.svgPath;
-        },
-      );
-    }
-
-    return SizedBox(
-      width: 120,
-      child: Row(
-        children: [
-          Container(
-            width: 54,
-            height: 32,
-            margin: const EdgeInsets.only(left: 10),
-            padding: const EdgeInsets.only(left: 5, right: 5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              border: Border.all(
-                color: const Color(0xFF011B33),
-              ),
-            ),
-            child: InkWell(
-              onTap: () {
-                selectCountry();
-                countryCode(code.value);
-              },
-              child: Row(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: SvgPicture.asset(
-                      countryFlag.value,
-                    ),
-                  ),
-                  const Spacer(),
-                  SvgPicture.asset('assets/svg/arrow_down.svg'),
-                ],
-              ),
-            ),
-          ),
-          const XBox(20),
-          BaseText(
-            text: code.value,
-            size: 16,
-            weight: FontWeight.w500,
-          ),
-        ],
       ),
     );
   }

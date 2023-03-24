@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // a simplifed app navigation
-// just a re-write of the Navigstor.of(context).push blah blah
 
 Future<T?> pushTo<T>(BuildContext context, Widget page,
     [PushStyle? pushStyle]) async {

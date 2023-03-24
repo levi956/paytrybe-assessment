@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:paytrybe_assessment/app/modules/authentication/pages/mobile/input_mobile.dart';
+import 'package:paytrybe_assessment/app/shared/pages/splash.dart';
 import 'package:paytrybe_assessment/core/setups/setups.dart';
 import 'package:paytrybe_assessment/core/theme/app_theme.dart';
 
@@ -20,7 +20,7 @@ class PaytrybeApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Paytrybe',
       theme: AppTheme.lightThemeData,
-      home: const InputMobilePage(),
+      home: const SplashPage(),
     );
   }
 }

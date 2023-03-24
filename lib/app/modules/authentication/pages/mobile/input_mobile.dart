@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:paytrybe_assessment/app/modules/authentication/pages/mobile/validate_mobile.dart';
-import 'package:paytrybe_assessment/app/modules/authentication/pages/sign_up/sign_up.dart';
 import 'package:paytrybe_assessment/app/shared/widgets/buttons/custom_button.dart';
 import 'package:paytrybe_assessment/app/shared/widgets/input/custom_textfield.dart';
 import 'package:paytrybe_assessment/app/shared/widgets/text/base_text.dart';
@@ -13,6 +12,8 @@ import 'package:paytrybe_assessment/core/config/navigation.dart';
 import 'package:paytrybe_assessment/core/constants/layout.dart';
 import 'package:paytrybe_assessment/core/theme/app_theme.dart';
 import 'package:paytrybe_assessment/core/theme/bar_color.dart';
+
+import '../../widgets/country_selector.dart';
 
 class InputMobilePage extends HookConsumerWidget {
   const InputMobilePage({super.key});
@@ -39,6 +40,7 @@ class InputMobilePage extends HookConsumerWidget {
                 ),
                 const YBox(40),
                 AltCustomTextField(
+                  keyboardType: TextInputType.phone,
                   label: 'Phone Number',
                   prefixIcon: CountrySelector(
                     countryCode: (v) {},
